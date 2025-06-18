@@ -23,6 +23,10 @@ jobs:
           aws sts get-caller-identity  # Should show your IAM user
           aws s3 ls s3://awss3staticgithubaction  # Should list bucket contents
 
+      - name: Upload index.html
+        run: |
+          echo "<h1>Hello World from AWS S3</h1>" > index.html
+          aws s3 cp index.html s3://awss3staticgithubaction/
 
       - name: Sync files to S3
         run: |
