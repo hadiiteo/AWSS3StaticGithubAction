@@ -21,12 +21,12 @@ jobs:
       - name: Verify AWS Access
         run: |
           aws sts get-caller-identity  # Should show your IAM user
-          aws s3 ls s3://awss3githubaction  # Should list bucket contents
+          aws s3 ls s3://awss3staticgithubaction  # Should list bucket contents
 
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./ s3://awss3githubaction \
+          aws s3 sync ./ s3://awss3staticgithubaction \
             --delete \
             --exclude '.git/*' \
             --exclude '.github/*'
