@@ -18,6 +18,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Verify AWS Access
+        run: |
+          aws sts get-caller-identity  # Should show your IAM user
+          aws s3 ls s3://your-bucket-name  # Should list bucket contents
+
+
       - name: Sync files to S3
         run: |
           aws s3 sync ./ s3://your-bucket-name \
