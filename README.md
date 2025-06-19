@@ -1,6 +1,8 @@
+# AWS S3 Static Website with Github Actions
+
 1. Create S3 Bucket
-1. Go to AWS S3 Console
-2. Create bucket with name like your-name-hello-world
+  1.1 Go to AWS S3 Console
+  1.2 Create bucket with name like your-name-hello-world
 3. Enable "Static website hosting" in bucket properties
 4. Set index.html as index document
 2. Set Up GitHub Actions
